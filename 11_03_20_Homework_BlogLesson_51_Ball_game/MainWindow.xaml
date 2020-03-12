@@ -1,0 +1,36 @@
+﻿<Window x:Class="_11_03_20_Homework_BlogLesson_51_Ball_game.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:_11_03_20_Homework_BlogLesson_51_Ball_game"
+        mc:Ignorable="d"
+        Title="PaddingBall" Height="500" Width="700" Background="Gray" Name="playground" ResizeMode="NoResize" WindowStartupLocation="CenterScreen" SizeToContent="Manual">
+    <Canvas Width="700" Height="500" KeyDown="playground_KeyDown">
+        <Menu VerticalAlignment="Top" HorizontalAlignment="Left" Height="20" Width="700" Background="AliceBlue" Foreground="Blue">
+            <MenuItem Header="File">
+                <MenuItem Header="Startgame" Background="AliceBlue" Click="StartGame_Click"></MenuItem>
+                <MenuItem Header="Exit" Background="AliceBlue" Click="ExitGame"></MenuItem>
+            </MenuItem>
+            <MenuItem Header="About" Click="ShowAboutBox"></MenuItem>
+        </Menu>
+
+        <Grid Height="462" Width="700" x:Name="currentGrid" Loaded="currentGrid_Loaded">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="700*" />
+                <ColumnDefinition Width="0*" />
+                <ColumnDefinition Width="0*" />
+            </Grid.ColumnDefinitions>
+            <Rectangle Margin="114, 132, 0, 0" Name="ball" Stroke="Black" RadiusX="120" RadiusY="120" Fill="Blue" Height="38" Width="38" VerticalAlignment="Top" Stretch="UniformToFill" HorizontalAlignment="Left">
+                <Rectangle.BitmapEffect>
+                    <BevelBitmapEffect BevelWidth="11" />
+                </Rectangle.BitmapEffect>
+                <Rectangle.BitmapEffectInput>
+                    <BitmapEffectInput/>
+                </Rectangle.BitmapEffectInput>
+            </Rectangle>
+            <Rectangle Height="13" Margin="200, 390, 0, 0" Name="pad" Stroke="Black" VerticalAlignment="Bottom" Fill="Black" HorizontalAlignment="Left" Width="100"></Rectangle>
+        </Grid>
+    </Canvas>
+
+</Window>
